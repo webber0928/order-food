@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} 建立新的餐點 {% endblock %}</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="title">名稱</label>
+        <input type="text" name="title" placeholder="餐點名稱" class="form-control" value="{{ request.form['title'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="content">價格</label>
+        <textarea name="price" placeholder="餐點價格" class="form-control">{{ request.form['price'] }}</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="content">圖片網址</label>
+        <textarea name="img" placeholder="圖片網址" class="form-control">{{ request.form['img'] }}</textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">送出</button>
+    </div>
+</form>
+{% endblock %}
